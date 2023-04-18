@@ -1,0 +1,214 @@
+/* Colores */
+:root {
+    --red: red;
+    --white: white;
+    --black: black;
+    
+    }
+    
+/* Reset margins and paddings */
+
+*,
+*::before,
+*::after {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+    
+    
+html {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    min-height: 100%;
+    text-align: center;
+}
+
+.container {
+    margin: 20px;
+}
+
+.contNombre {
+    background-color: var(--black);
+    border-radius: 10px 90px 0px 100px;
+}
+
+.nombre {
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+img {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.disco {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+hr {
+    color: var(--red);
+    background-color: var(--red);
+    width: 200px;
+    margin-bottom: 10px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+.final {
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+p {
+    font-style: italic;
+    text-align: justify;
+}
+
+@supports (display:grid){
+    @media (min-width: 40em){
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: 10% 10% 20% 20% 20% 20%;
+        }
+
+        .contNombre {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            grid-column: 4/6;
+            grid-row: 1/3;
+            z-index: 2;
+            height: fit-content;
+            margin-top: 2vw;
+            
+        }
+        
+        .nombre {
+            font-size: 2.5rem;
+            margin-left: 15px;
+            margin-right: 15px;
+
+        }
+
+        img {
+
+            grid-column: 1/5;
+            grid-row: 1/4;
+            z-index: 0;
+        }
+
+        .contTexto {
+            grid-column: 1/5;
+            grid-row: 4/7;
+            margin-top: 50px;
+        }
+
+        .contDisco {
+            z-index: 1;
+            grid-column: 5/6;
+            grid-row: 3/4;
+            position: relative;
+            
+        }
+
+        .disco {
+            position: absolute;
+            right: 10px;
+            margin-top: 30px;
+            font-size: 1rem;
+            text-align: right;
+        }
+
+        
+    }
+
+    @media (min-width: 46em){
+        .contTexto {
+            grid-row: 5/7;
+            margin-top: 30px;
+        }
+
+        .contDisco {
+            
+        }
+        .disco {
+            font-size: 1.5rem;
+            align-self: self-end;
+        }
+    }
+
+    @media (min-width: 60em){
+        .container {
+            height: 80vh;
+            display: grid;
+            grid-template-columns: 5% 10% 5% 5% 25% 5% 10% 20% 10% 5%; 
+            grid-template-rows: 10% 10% 20% 10% 10% 30% 10%;
+        }
+
+        .contNombre {
+            height: 10vh;
+            margin: 10;
+            grid-column: 6/10;
+            grid-row: 2/3;
+            margin-top: 20px;
+        }
+
+        .nombre {
+            font-size: 6vh;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        img {
+            grid-column: 2/8;
+            grid-row: 2/8;
+            border-radius: 200px 10px 0px 200px;
+        }
+
+        p {
+            font-style: italic;
+            text-align: justify;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+        
+        .contTexto {
+            margin-top: 0;
+            grid-column: 8/11;
+            grid-row: 4/7;
+        } 
+        
+        .contDisco {
+            display: flex;
+            justify-content: end;
+            writing-mode: tb-rl;
+            transform: rotate(-180deg);
+            background-color: var(--white);
+            grid-column: 4/5;
+            grid-row: 5/8;
+            border-radius: 15px;
+        }
+
+        .disco {
+            font-size: 1.5rem;
+            
+        }
+
+        hr {
+            width: 100px;
+            height: 10px;
+        }
+    }
+}
